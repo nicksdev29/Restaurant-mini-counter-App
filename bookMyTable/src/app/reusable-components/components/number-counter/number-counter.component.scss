@@ -1,0 +1,30 @@
+mat-form-field {
+    width: 60%;
+    text-align: center;
+    justify-content: right;
+    -moz-appearance: textfield;
+    display: block;
+}
+.mat-mdc-form-field button[disabled=true]{
+    cursor: auto;
+    color: #676767;
+}
+.mat-mdc-form-field button{
+    padding: 0px;
+    text-align: center;
+    width: 32px !important;
+    height: 32px !important;
+}
+.mat-mdc-form-field input{
+    margin: auto;
+    text-align: center;
+    font-size: 16px;
+    /* align-self: end; */
+    position: relative;
+    height: 32px !important;
+}
+  
+  input::-webkit-outer-spin-button,
+  input::-webkit-inner-spin-button {
+    display: none;
+  }

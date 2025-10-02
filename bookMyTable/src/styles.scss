@@ -1,0 +1,132 @@
+/* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/icon?family=Material+Icons');
+@import url('@angular/material/prebuilt-themes/cyan-orange.css');
+
+.card-title{
+    text-align: center;
+}
+.card{
+    border: none !important;
+}
+.card-header{
+    background-color: #ffffff !important;
+    border: none !important;
+}
+.card-body{
+    border: none !important;
+}
+.table-number{
+    font-size: 18px;
+}
+app-number-counter{
+    display: block;
+    width: 98%;
+    justify-content: end;
+    align-items: center;
+    align-content: center;
+}
+
+.counter .mat-mdc-form-field-underline{
+    display: none !important;
+}
+
+mat-button-toggle-group{
+    width: 90%;
+}
+mat-button-toggle {
+    width: 34%;
+    padding: 10px 0px;
+    color: #73777b !important;
+}
+mat-button-toggle.mat-mdc-button-toggle-checked {
+    color: #e2d3d3 !important;
+}
+mat-form-field.sub-categories-field{
+    width: 90%;
+    margin: 22px auto;
+}
+.mat-mdc-select-value-text {
+    font-size: 16px;
+    font-weight: 500;
+}
+.mat-mdc-form-field-wrapper{
+    padding-bottom: 12px !important;
+}
+
+.mat-mdc-form-field {
+    margin-bottom: 6px;
+}
+
+.mat-mdc-form-field-error {
+    color: #b65247 !important;
+}
+
+mat-option.mat-mdc-selected .mat-mdc-option-text{
+    color: #c0c0b7;
+}
+.mat-mdc-select-arrow{
+    color:#212121;
+}
+.table-items-cont{
+    max-height: 368px;
+    overflow-y: scroll;
+    width: 96%;
+}
+.mat-mdc-grid-tile .mat-mdc-figure{
+    justify-content: start !important;
+}
+.table-item{
+    margin: 10px auto;
+    flex-wrap: nowrap !important;
+}
+.table-item .item-img-cont{
+    width: 122px !important;
+    min-width: 122px;
+}
+.table-item .item-img{
+    width:96px;
+    height: 122px;
+}
+.bill-container .item-category{
+    font-weight: 600;
+    color: #000000;
+    display: flex;
+}
+.bill-container .bill-item-details{
+    height: 322px;
+    overflow-y: scroll;
+}
+.bill-container .bill-item{
+    color: #666666;
+    font-weight: 500;
+    font-size: 12px !important;
+    display: flex !important;
+}
+.bill-container .item-category .amount, .bill-container .bill-item .amount{
+    text-align: right;
+}
+mat-divider.mat-mdc-divider{
+    border-color: #4343437a;
+}
+
+.bill-container .bill-total{
+    margin: 8px auto;
+}
+.bill-container .bill-total p.label{
+    margin-left: 36px;
+}
+.bill-container .bill-total p.amount{
+    text-align: right;
+    margin-right: 38px;
+}
+.bill-container .payment-btn-cont{
+    display: flex;
+}
+.bill-container .payment-btn-cont .bill-payment-btn{
+    height: 42px;
+    width: 92%;
+    margin: 8px auto;
+}
+.bill-container .payment-btn-cont .bill-payment-btn[disabled=true]{
+    background-color: black;
+}

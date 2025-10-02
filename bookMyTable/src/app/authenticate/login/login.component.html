@@ -1,0 +1,61 @@
+<div class="wrapper">
+    <div class="main-panel">
+        <div class="main-content">
+            <div class="container-fluid">
+                <div class="card">
+
+                    <div class="card-header card-header-danger">
+                        <h3 class="card-title">Login</h3>
+                    </div>
+
+                    <div class="card-body">
+                        <div class="container">
+                            <div class="row justify-content-center">
+                                <div class="col-md-6">
+                                    <form [formGroup]="loginFormGroup" (submit)="doLogin()">
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                <mat-form-field appearance="fill">
+                                                    <mat-label>Email ID</mat-label>
+                                                    <input matInput formControlName="user"/>
+                                                    @if (loginFormGroup.controls['user'].hasError('required')) {
+                                                        <mat-error>
+                                                            Email ID is Required.
+                                                        </mat-error>
+                                                    }
+                                                </mat-form-field>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                <mat-form-field>
+                                                    <mat-label>Password</mat-label>
+                                                    <input matInput type="password" formControlName="password"/>
+                                                    @if (loginFormGroup.controls['password'].hasError('required')) {
+                                                        <mat-error>
+                                                            Password is Required.
+                                                        </mat-error>
+                                                    }
+                                                </mat-form-field>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                <button type="submit" mat-raised-button>Login</button>
+                                            </div>
+                                        </div>
+                                    </form>
+                                    <div class="row mt-3">
+                                        <div class="col-md-12">
+                                            New to Book My Table? <a class="btn btn-link" (click)="registerCustomer()">Register Here</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

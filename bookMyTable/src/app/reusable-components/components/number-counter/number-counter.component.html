@@ -1,0 +1,19 @@
+<mat-form-field class="counter">
+    <button 
+      mat-icon-button 
+      matPrefix 
+      aria-label="Remove" 
+      (click)="decrementCounter()" 
+      [disabled]="shouldDisableDecrement(counterValue)">
+      <mat-icon>remove</mat-icon>
+    </button>
+    <input matInput type="number" min="0" max="20" [(ngModel)]="counterValue" readonly="true" />
+    <button
+      mat-icon-button 
+      matSuffix
+      aria-label="Add"
+      (click)="incrementCounter()" 
+      [disabled]="shouldDisableIncrement(counterValue)">
+      <mat-icon>add</mat-icon>
+    </button>
+  </mat-form-field>

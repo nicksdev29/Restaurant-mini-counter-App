@@ -1,0 +1,102 @@
+[
+    {
+        "id": 1,
+        "name": "Trivento Amado Sur 2016",
+        "category": "drinks",
+        "sub_category": "wine",
+        "price":  340,
+        "quantity_type": "ml",
+        "qty_per_unit": "60",
+        "image": "images/Trivento-Amado-Sur-2016.webp"
+    },
+    {
+        "id": 2,
+        "name": "Beaux freres",
+        "price":  230,
+        "category": "drinks",
+        "sub_category": "wine",
+        "quantity_type": "ml",
+        "qty_per_unit": "60",
+        "image": "images/Trivento-Amado-Sur-2016.webp"
+    },
+    {
+        "id": 3,
+        "name": "Domaine Serene",
+        "category": "drinks",
+        "sub_category": "wine",
+        "price":  200,
+        "quantity_type": "ml",
+        "qty_per_unit": "60",
+        "image": "images/Trivento-Amado-Sur-2016.webp"
+    },
+    {
+        "id": 4,
+        "name": "CocaCola",
+        "category": "drinks",
+        "sub_category": "soda",
+        "price":  65,
+        "quantity_type": "ml",
+        "qty_per_unit": "120",
+        "image": "images/Trivento-Amado-Sur-2016.webp"
+    },
+    {
+        "id": 5,
+        "name": "Fanta",
+        "price":  65,
+        "quantity_type": "ml",
+        "category": "drinks",
+        "sub_category": "soda",
+        "qty_per_unit": "120",
+        "image": "images/Trivento-Amado-Sur-2016.webp"
+    },
+    {
+        "id": 6,
+        "name": "Sprite",
+        "price":  65,
+        "category": "drinks",
+        "sub_category": "soda",
+        "quantity_type": "ml",
+        "qty_per_unit": "120",
+        "image": "images/Trivento-Amado-Sur-2016.webp"
+    },
+    {
+        "id": 7,
+        "name": "Apple Juice",
+        "price":  35,
+        "quantity_type": "ml",
+        "category": "drinks",
+        "sub_category": "juice",
+        "qty_per_unit": "90",
+        "image": "images/Trivento-Amado-Sur-2016.webp"
+    },
+    {
+        "id": 8,
+        "name": "Lime Juice",
+        "category": "drinks",
+        "sub_category": "juice",
+        "price":  90,
+        "quantity_type": "ml",
+        "qty_per_unit": "90",
+        "image": "images/Trivento-Amado-Sur-2016.webp"
+    },
+    {
+        "id": 9,
+        "name": "Orange Juice",
+        "price":  90,
+        "category": "drinks",
+        "sub_category": "juice",
+        "quantity_type": "ml",
+        "qty_per_unit": "90",
+        "image": "images/Trivento-Amado-Sur-2016.webp"
+    },
+    {
+        "id": 10,
+        "name": "Chicken Dum Biryani",
+        "price":  200,
+        "category": "foods",
+        "sub_category": "biryani",
+        "quantity_type": "plate",
+        "qty_per_unit": "1",
+        "image": "images/chicken-dum-biryani-in-oven.jpg"
+    }
+]

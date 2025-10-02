@@ -1,0 +1,58 @@
+<div class="app-container">
+    <div class="header">
+        <mat-toolbar>
+            <div class="row align-items-center">
+                <div class="col-md-2">
+                    <div class="hamburg">
+                        <button mat-icon-button aria-label="Admin navigation button" (click)="adminSideNav.toggle()">
+                          <mat-icon>menu</mat-icon>
+                        </button>
+                    </div>
+                </div>
+                <div class="col-md-8">
+                    <h3>Book My Table - Admin</h3>
+                </div>
+                <div class="col-md-2 d-flex justify-content-end">
+                    <button mat-icon-button aria-label="Admin navigation button" (click)="logout()">
+                      <mat-icon>logout</mat-icon>
+                    </button>
+                </div>
+            </div>
+        </mat-toolbar>
+    </div>
+    <div class="app-sub-container">
+        <mat-sidenav-container [autosize]="false" class="nav-drawer-container">
+            <mat-sidenav #adminSideNav [opened]="true" mode="side">
+                <mat-nav-list>
+                    <mat-list-item>
+                        <button mat-icon-button routerLink="">
+                          <mat-icon>dashboard</mat-icon>
+                          <span class="nav-item">Dashboard</span>
+                        </button>
+                    </mat-list-item>
+                    <mat-list-item>
+                        <button mat-icon-button routerLink="menu">
+                          <mat-icon>dining</mat-icon>
+                          <span class="nav-item">Menu</span>
+                        </button>
+                    </mat-list-item>
+                    <mat-list-item>
+                        <button mat-icon-button routerLink="audit">
+                          <mat-icon>track_changes</mat-icon>
+                          <span class="nav-item">Audit</span>
+                        </button>
+                    </mat-list-item>
+                    <mat-list-item>
+                        <button mat-icon-button routerLink="users">
+                          <mat-icon>group</mat-icon>
+                          <span class="nav-item">Users</span>
+                        </button>
+                    </mat-list-item>
+                </mat-nav-list>
+            </mat-sidenav>
+            <mat-sidenav-content>
+                <router-outlet></router-outlet>
+            </mat-sidenav-content>
+        </mat-sidenav-container>
+    </div>
+</div>

@@ -1,0 +1,179 @@
+<div class="wrapper">
+    <div class="main-panel">
+        <div class="main-content">
+            <div class="container-fluid">
+                <div class="card">
+                    
+                    <div class="card-header card-header-danger">
+                        <h3 class="card-title">My Table</h3>
+                    </div>
+                    <div class="card-body">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-md-8">
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <div>
+                                                <p class="table-number">
+                                                    Table 1 - <strong>Mr. Nikhilesh</strong>
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <!-- taggle group to select any one of the Categories -->
+                                            <mat-button-toggle-group appearance="standard" #group="matButtonToggleGroup" value={{selectedItemCat}} name="fontStyle" aria-label="Font Style">
+                                                <mat-button-toggle value="drinks" (change)="loadSubCat($event.value)">Drinks</mat-button-toggle>
+                                                <mat-button-toggle value="foods" (change)="loadSubCat($event.value)">Foods</mat-button-toggle>
+                                                <mat-button-toggle value="desserts" (change)="loadSubCat($event.value)">Desserts</mat-button-toggle>
+                                            </mat-button-toggle-group>
+                                            
+                                            <!-- taggle group to select any one of the Categories -->
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="row">
+                                        <div class="col-md-12">
+
+                                            <!-- dropdown to select any one of the sub Categories -->
+                                            <mat-form-field class="right-space sub-categories-field">
+                                                <mat-select
+                                                id="input-filterVal" [(value)]="filterSubCat" (selectionChange)="loadItems($event.value)" >
+                                                    <mat-option *ngFor="let subCat of itemsSubCat" value={{subCat}}>{{subCat}}</mat-option>
+                                                </mat-select>
+                                            </mat-form-field>
+
+                                            <!-- dropdown to select any one of the sub Categories -->
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <div class="table-items-cont">
+
+                                                <!-- Items loaded in grid view  -->
+                                                <mat-grid-list cols="2" rowHeight="2:0.80">
+                                                    <mat-grid-tile *ngFor="let item of items">
+                                                        <div class="row table-item">
+                                                            <div class="col-sm-4 item-img-cont">
+                                                                <img class="item-img" src={{item.image}}/>
+                                                            </div>
+                                                            <div class="col-sm-8">
+                                                                <p><strong>{{item.name}}</strong> ({{item.qty_per_unit}} {{item.quantity_type}})</p>
+                                                                <p>₹ {{item.price}}</p>
+                                                                <div class="add-quantity">
+                                                                    
+                                                                    <!-- Calling counter component to update item quantity to the bill  -->
+
+                                                                    <app-number-counter [item]="item.id" (onCounterChange)="onQtyChange($event)"></app-number-counter>
+                                                                    
+                                                                    <!-- Calling counter component to update item quantity to the bill  -->
+                                                                    
+                                                                </div>
+                                                            </div>
+
+                                                        </div>
+                                                    </mat-grid-tile>
+                                                </mat-grid-list>
+                                                
+                                                <!-- Items loaded in grid view  -->
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Bill Section -->
+                                <div class="col-md-4">
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <h5>Check</h5>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <div class="bill-container">
+                                                <mat-list class="bill-item-details">
+                                                    <div *ngIf="drinkItemsinBill">
+                                                    <div class="item-category" mat-subheader><div class="col-md-8">Drinks</div><div class="col-md-4 amount">₹ {{drinkItemsinBill.total || 0}}</div></div>
+                                                        <mat-list-item *ngFor="let item of drinkItemsinBill.items">
+                                                            <div class="bill-item row" mat-line>
+                                                                <div class="col-sm-6">{{item.addedItem.name}}</div>
+                                                                <div class="col-sm-3">₹ {{item.addedItem.price}} x {{item.quantity}}</div>
+                                                                <div class="col-sm-3 amount">₹ {{item.addedItem.price * item.quantity}}</div>
+                                                            </div>
+                                                        </mat-list-item>
+                                                        <mat-divider></mat-divider>
+                                                    </div>
+
+                                                    <div *ngIf="foodItemsinBill">
+                                                    <div class="item-category" mat-subheader><div class="col-md-8">Foods</div><div class="col-md-4 amount">₹ {{foodItemsinBill.total || 0}}</div></div>
+                                                        <mat-list-item *ngFor="let item of foodItemsinBill.items">
+                                                            <div class="bill-item row" mat-line>
+                                                                <div class="col-sm-6">{{item.addedItem.name}}</div>
+                                                                <div class="col-sm-3">₹ {{item.addedItem.price}} x {{item.quantity}}</div>
+                                                                <div class="col-sm-3 amount">₹ {{item.addedItem.price * item.quantity}}</div>
+                                                            </div>
+                                                        </mat-list-item>
+                                                        <mat-divider></mat-divider>
+                                                    </div>
+                                                    
+                                                    <div *ngIf="dessertItemsinBill">                                                        
+                                                    <div class="item-category" mat-subheader><div class="col-md-8">Desserts</div><div class="col-md-4 amount">₹ {{dessertItemsinBill.total || 0}}</div></div>
+                                                        <mat-list-item *ngFor="let item of dessertItemsinBill.items">
+                                                            <div class="bill-item row" mat-line>
+                                                                <div class="col-sm-6">{{item.addedItem.name}}</div>
+                                                                <div class="col-sm-3">₹ {{item.addedItem.price}} x {{item.quantity}}</div>
+                                                                <div class="col-sm-3 amount">₹ {{item.addedItem.price * item.quantity}}</div>
+                                                            </div>
+                                                        </mat-list-item>
+                                                        <mat-divider></mat-divider>
+                                                    </div>
+                                                </mat-list>
+                                                <div class="bill-total">
+                                                    <div class="row">
+                                                        <div class="col-sm-7">
+                                                            <p class="label">Subtotal</p>
+                                                        </div>
+                                                        <div class="col-sm-5">
+                                                            <p class="amount">₹ {{billSubTotal || 0}}</p>
+                                                        </div>
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class="col-sm-7">
+                                                            <p class="label">Estimated Tax</p>
+                                                        </div>
+                                                        <div class="col-sm-5">
+                                                            <p class="amount">₹ {{ billTax || 0}}</p>
+                                                        </div>
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class="col-sm-7">
+                                                            <p class="label">Discount</p>
+                                                        </div>
+                                                        <div class="col-sm-5">
+                                                            <p class="amount">₹ 0</p>
+                                                        </div>
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class="col-sm-12 payment-btn-cont">
+                                                            <button type="submit" disabled={{!paymentEnabled}} mat-raised-button class="btn btn-success bill-payment-btn">Pay ₹ {{billTotal || 0}}</button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <!-- Bill Section -->
+
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

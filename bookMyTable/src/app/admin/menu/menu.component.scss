@@ -1,0 +1,24 @@
+.container {
+    .sub-header {
+        .title {
+            margin-left: 0.5rem;
+            margin-bottom: 0;
+        }
+        .actions {
+            display: flex;
+            justify-content: flex-end;
+            margin-right: 2rem;
+
+            .action-btn {
+                margin-left: 1rem;
+            }
+        }
+        mat-action-list {
+            float: right;
+            width: inherit;
+        }
+    }
+    .content {
+        margin: 1rem;
+    }
+}
